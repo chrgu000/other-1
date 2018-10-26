@@ -78,45 +78,35 @@ springmvc框架：
 
 ​                  注意：形参中即有pojo类型又有简单类型，参数绑定互不影响。
 
-​                   自定义参数绑定：
+```
+            自定义参数绑定：
 
-​                            日期类型绑定自定义：
+日期类型绑定自定义：
 
-​                                     定义的Converter<源类型，目标类型>接口实现类，比如：
+定义的Converter<源类型，目标类型>接口实现类，比如：
 
-​                                     Converter<String,Date>表示：将请求的日期数据串转成java中的日期类型。
+Converter<String,Date>表示：将请求的日期数据串转成java中的日期类型。
 
-​                                     注意：要转换的目标类型一定和接收的pojo中的属性类型一致。
+注意：要转换的目标类型一定和接收的pojo中的属性类型一致。
 
-​                                     将定义的Converter实现类注入到处理器适配器中。
+将定义的Converter实现类注入到处理器适配器中。
 
-​                                     <mvc:annotation-driven conversion-service=*"conversionService"*>
+<mvc:annotation-driven conversion-service="conversionService">
 
 </mvc:annotation-driven>
 
 <!-- conversionService -->
+    <bean id="conversionService"
+        class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+       <!-- 转换器 -->
+       <property name=*"converters"*>
+           <list>
+              <bean class="cn.itcast.ssm.controller.converter.CustomDateConverter"/>
+           </list>
+       </property>
+    </bean>
 
-​    <bean id=*"conversionService"*
-
-​        class=*"org.springframework.format.support.FormattingConversionServiceFactoryBean"*>
-
-​       <!-- 转换器 -->
-
-​       <property name=*"converters"*>
-
-​           <list>
-
-​              <bean class=*"cn.itcast.ssm.controller.converter.CustomDateConverter"*/>
-
-​           </list>
-
-​       </property>
-
-​    </bean>
-
- 
-
- 
+```
 
 springmvc和struts2区别：
 
@@ -196,7 +186,13 @@ springmvc可以单例开发，struts2只能是多例开发。
 
  
 
-​         商品名称：<inputname="itemsCustom.name" />
+​         商品名称：
+
+```
+<inputname="itemsCustom.name" />
+```
+
+
 
 ​         注意：itemsCustom和包装pojo中的属性一致即可。
 
@@ -312,23 +308,28 @@ privateMap<String, Object> [itemInfo]() = new HashMap<String, Object>();
 
 页面定义如下：
 
- 
-
+ ```
 <tr>
 
 <td>学生信息：</td>
 
 <td>
 
-姓名：<inputtype=*"text"*name=*"itemInfo['name']"*/>
+姓名：<inputtype="text"name="itemInfo['name']"/>
 
-年龄：<inputtype=*"text"*name=*"itemInfo['price']"*/>
+年龄：<inputtype="text"name="itemInfo['price']"/>
 
 .. .. ..
 
 </td>
 
 </tr>
+
+ ```
+
+
+
+
 
  
 
@@ -910,21 +911,26 @@ springmvc中使用jackson的包进行json转换（@requestBody和@responseBody�
 
  
 
+```
 <!--注解适配器 -->
 
-​    <bean class=*"org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"*>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 
-​       [<]()property name=*"messageConverters"*>
+       <property name="messageConverters">
 
-​       <list>
+       <list>
 
-​       <bean class=*"org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"*></bean>
+       <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
 
-​       </list>
+       </list>
 
-​       </property>
+       </property>
 
-​    </bean>
+    </bean>
+
+```
+
+
 
  
 
@@ -1198,33 +1204,25 @@ REST的url风格：http://..../items/001
 
 ### 10.2.1             针对HandlerMapping配置
 
-**springmvc****拦截器针对HandlerMapping****进行拦截设置，**如果在某个HandlerMapping中配置拦截，经过该HandlerMapping映射成功的handler最终使用该拦截器。
+**springmvc****拦截器针对HandlerMapping进行拦截设置，**如果在某个HandlerMapping中配置拦截，经过该HandlerMapping映射成功的handler最终使用该拦截器。
 
+```
 <bean
-
-​    class=*"org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"*>
-
-​    <property name=*"interceptors"*>
-
-​       <list>
-
-​           <ref bean=*"handlerInterceptor1"*/>
-
-​           <ref bean=*"handlerInterceptor2"*/>
-
-​       </list>
-
-​    </property>
-
+    class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+    <property name="interceptors">
+       <list>
+           <ref bean="handlerInterceptor1"/>
+           <ref bean="handlerInterceptor2"/>
+       </list>
+    </property>
 </bean>
-
-​    <bean id=*"handlerInterceptor1" *class=*"springmvc.intercapter.HandlerInterceptor1"*/>
-
-​    <bean id=*"handlerInterceptor2" *class=*"springmvc.intercapter.HandlerInterceptor2"*/>
+    <bean id="handlerInterceptor1" class="springmvc.intercapter.HandlerInterceptor1"/>
+    <bean id="handlerInterceptor2" class="springmvc.intercapter.HandlerInterceptor2"/>
+```
 
 一般不推荐使用。
 
- 
+
 
 ### 10.2.2             类似全局的拦截器
 
