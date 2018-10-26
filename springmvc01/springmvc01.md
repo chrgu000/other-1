@@ -66,7 +66,7 @@ springmvc是一个基于mvc的web框架。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image002.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image002.jpg)
 
  
 
@@ -80,13 +80,13 @@ mvc是一个设计模式，mvc在b/s系统 下的应用：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image003.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image003.gif)
 
  
 
 ## 1.3     springmvc框架
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image004.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image004.gif)
 
  
 
@@ -190,7 +190,7 @@ springmvc和mybaits使用一个案例（商品订单管理）。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image006.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image006.jpg)
 
 java环境：
 
@@ -208,7 +208,7 @@ springmvc版本：spring3.2
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image008.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image008.jpg)
 
  
 
@@ -218,7 +218,7 @@ springmvc版本：spring3.2
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image010.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image010.jpg)
 
  
 
@@ -226,13 +226,13 @@ springmvc版本：spring3.2
 
 在classpath下的springmvc.xml中配置处理器适配器
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image012.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image012.jpg)
 
  
 
 通过查看原代码：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image014.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image014.jpg)
 
  
 
@@ -242,7 +242,7 @@ springmvc版本：spring3.2
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image016.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image016.jpg)
 
  
 
@@ -328,7 +328,7 @@ springmvc版本：spring3.2
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image018.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image018.jpg)
 
  
 
@@ -338,7 +338,7 @@ springmvc版本：spring3.2
 
 将编写Handler在spring容器加载。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image020.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image020.jpg)
 
  
 
@@ -348,7 +348,7 @@ springmvc版本：spring3.2
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image022.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image022.jpg)
 
  
 
@@ -362,7 +362,7 @@ springmvc版本：spring3.2
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image024.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image024.jpg)
 
  
 
@@ -376,13 +376,13 @@ springmvc版本：spring3.2
 
 处理器映射器根据url找不到Handler，报下边的错误。说明url错误。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image026.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image026.jpg)
 
  
 
 处理器映射器根据url找到了Handler，转发的jsp页面找到，报下边的错误，说明jsp页面地址错误了。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image028.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image028.jpg)
 
  
 
@@ -406,7 +406,7 @@ org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image030.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image030.jpg)
 
  
 
@@ -430,7 +430,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
 要求编写的Handler实现 HttpRequestHandler接口。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image032.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image032.jpg)
 
  
 
@@ -452,7 +452,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image034.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image034.jpg)
 
  
 
@@ -488,7 +488,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
 ## 5.1     配置注解映射器和适配器。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image036.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image036.jpg)
 
  
 
@@ -642,7 +642,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
 调用doDiapatch
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image038.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image038.jpg)
 
  
 
@@ -650,11 +650,11 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image040.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image040.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image042.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image042.jpg)
 
  
 
@@ -662,7 +662,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image044.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image044.jpg)
 
  
 
@@ -672,7 +672,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
 视图解析，得到view:
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image046.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image046.jpg)
 
  
 
@@ -682,11 +682,11 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
 渲染方法：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image048.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image048.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image050.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image050.jpg)
 
  
 
@@ -756,13 +756,13 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image052.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image052.jpg)
 
  
 
 程序中不用指定前缀和后缀：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image054.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image054.jpg)
 
  
 
@@ -788,7 +788,7 @@ org.springframework.web.servlet.mvc.[HttpRequestHandlerAdapter]()
 
 springmvc+mybaits的系统架构：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image055.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image055.gif)
 
  
 
@@ -832,7 +832,7 @@ springmvc+mybaits的系统架构：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image056.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image056.jpg)
 
 java环境：
 
@@ -864,13 +864,13 @@ jstl包
 
  
 
-参考：![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image058.jpg)
+参考：![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image058.jpg)
 
  
 
 工程结构：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image060.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image060.jpg)
 
  
 
@@ -890,7 +890,7 @@ mybatis自己的配置文件。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image062.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image062.jpg)
 
  
 
@@ -908,7 +908,7 @@ mapper扫描器
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image064.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image064.jpg)
 
  
 
@@ -918,7 +918,7 @@ mapper扫描器
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image066.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image066.jpg)
 
  
 
@@ -946,7 +946,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image068.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image068.jpg)
 
  
 
@@ -956,7 +956,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image070.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image070.jpg)
 
  
 
@@ -972,11 +972,11 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image072.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image072.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image074.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image074.jpg)
 
  
 
@@ -990,7 +990,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image076.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image076.jpg)
 
  
 
@@ -1002,7 +1002,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image078.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image078.jpg)
 
  
 
@@ -1088,7 +1088,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image080.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image080.jpg)
 
  
 
@@ -1096,7 +1096,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image082.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image082.jpg)
 
  
 
@@ -1110,7 +1110,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image084.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image084.jpg)
 
  
 
@@ -1122,7 +1122,7 @@ sql语句：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image086.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image086.jpg)
 
  
 
@@ -1168,7 +1168,7 @@ mapper：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image088.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image088.jpg)
 
  
 
@@ -1202,7 +1202,7 @@ n  窄化请求映射
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image090.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image090.jpg)
 
 n  限制http请求方法
 
@@ -1210,9 +1210,9 @@ n  限制http请求方法
 
 如果限制请求为post方法，进行get请求，报错：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image092.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image092.jpg)
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image094.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image094.jpg)
 
  
 
@@ -1238,7 +1238,7 @@ n  返回string
 
 真正视图(jsp路径)=前缀+逻辑视图名+后缀
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image096.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image096.jpg)
 
 2、redirect重定向
 
@@ -1246,7 +1246,7 @@ n  返回string
 
 redirect重定向特点：浏览器地址栏中的url会变化。修改提交的request数据无法传到重定向的地址。因为重定向后重新进行request（request无法共享）
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image098.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image098.jpg)
 
  
 
@@ -1254,7 +1254,7 @@ redirect重定向特点：浏览器地址栏中的url会变化。修改提交的
 
 通过forward进行页面转发，浏览器地址栏url不变，request可以共享。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image100.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image100.jpg)
 
  
 
@@ -1304,7 +1304,7 @@ response.getWriter().write("json串");
 
 springmvc中，接收页面提交的数据是通过方法形参来接收。而不是在controller类定义成员变更接收！！！！
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image101.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image101.gif)
 
  
 
@@ -1354,13 +1354,13 @@ model是一个接口，modelMap是一个接口实现 。
 
 通过required属性指定参数是否必须要传入，如果设置为true，没有传入参数，报下边错误：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image103.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image103.jpg)
 
  
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image105.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image105.jpg)
 
  
 
@@ -1378,13 +1378,13 @@ model是一个接口，modelMap是一个接口实现 。
 
 页面定义：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image107.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image107.jpg)
 
  
 
 controller的pojo形参的定义：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image109.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image109.jpg)
 
  
 
@@ -1396,7 +1396,7 @@ controller的pojo形参的定义：
 
 将请求日期数据串传成日期类型，要转换的日期类型和pojo中日期属性的类型保持一致。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image111.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image111.jpg)
 
  
 
@@ -1410,7 +1410,7 @@ controller的pojo形参的定义：
 
 ### 12.5.1             自定义日期类型绑定
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image113.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image113.jpg)
 
  
 
@@ -1418,11 +1418,11 @@ controller的pojo形参的定义：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image115.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image115.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image117.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc01/pic/clip_image117.jpg)
 
  
 
