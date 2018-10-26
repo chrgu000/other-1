@@ -208,7 +208,7 @@ controller方法形参：
 
  
 
-​         ![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image002.jpg)
+​         ![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image002.jpg)
 
  
 
@@ -238,13 +238,13 @@ controller方法定义：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image004.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image004.jpg)
 
  
 
 页面定义：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image006.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image006.jpg)
 
  
 
@@ -272,17 +272,17 @@ controller方法定义：
 
 ​         使用List接收页面提交的批量数据，通过包装pojo接收，在包装pojo中定义list<pojo>属性
 
-​         ![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image008.jpg)
+​         ![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image008.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image010.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image010.jpg)
 
  
 
 页面定义：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image012.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image012.gif)
 
  
 
@@ -394,7 +394,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image014.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image014.jpg)
 
  
 
@@ -402,7 +402,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image016.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image016.jpg)
 
  
 
@@ -410,7 +410,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image018.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image018.jpg)
 
  
 
@@ -420,7 +420,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image020.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image020.jpg)
 
  
 
@@ -432,7 +432,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image022.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image022.jpg)
 
  
 
@@ -440,7 +440,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image024.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image024.jpg)
 
  
 
@@ -462,13 +462,13 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image026.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image026.jpg)
 
  
 
 页面显示错误信息：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image028.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image028.jpg)
 
  
 
@@ -496,7 +496,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image030.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image030.jpg)
 
  
 
@@ -504,7 +504,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image032.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image032.jpg)
 
  
 
@@ -514,7 +514,7 @@ hibernate的校验框架validation所需要jar包：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image034.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image034.jpg)
 
  
 
@@ -554,7 +554,7 @@ pojo数据传入controller方法后，springmvc自动将pojo数据放到request�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image036.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image036.jpg)
 
  
 
@@ -562,7 +562,7 @@ pojo数据传入controller方法后，springmvc自动将pojo数据放到request�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image038.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image038.jpg)
 
  
 
@@ -572,7 +572,7 @@ pojo数据传入controller方法后，springmvc自动将pojo数据放到request�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image040.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image040.jpg)
 
  
 
@@ -602,7 +602,7 @@ model.addAttribute("id",id);
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image041.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image041.gif)
 
 springmvc提供全局异常处理器（一个系统只有一个异常处理器）进行统一异常处理。
 
@@ -620,7 +620,7 @@ springmvc提供全局异常处理器（一个系统只有一个异常处理器�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image043.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image043.jpg)
 
  
 
@@ -732,7 +732,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image045.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image045.jpg)
 
  
 
@@ -740,7 +740,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image047.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image047.jpg)
 
  
 
@@ -758,13 +758,13 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image049.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image049.jpg)
 
  
 
 在service接口中抛出异常：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image051.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image051.jpg)
 
  
 
@@ -800,7 +800,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image053.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image053.jpg)
 
  
 
@@ -808,7 +808,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
 上边的解析内部使用下边的jar进行图片上传。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image055.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image055.jpg)
 
  
 
@@ -816,7 +816,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
 通过图形界面配置：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image057.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image057.jpg)
 
  
 
@@ -828,7 +828,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image059.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image059.jpg)
 
  
 
@@ -842,7 +842,7 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image061.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image061.jpg)
 
  
 
@@ -852,13 +852,13 @@ springmvc提供一个HandlerExceptionResolver接口
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image063.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image063.jpg)
 
  
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image065.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image065.jpg)
 
  
 
@@ -878,7 +878,7 @@ json数据格式在接口调用中、html页面中较常用，json格式比较�
 
 ## 8.2     springmvc进行json交互
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image066.gif)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image066.gif)
 
  
 
@@ -898,7 +898,7 @@ json数据格式在接口调用中、html页面中较常用，json格式比较�
 
 springmvc中使用jackson的包进行json转换（@requestBody和@responseBody使用下边的包进行json转），如下：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image068.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image068.jpg)
 
  
 
@@ -952,19 +952,19 @@ springmvc中使用jackson的包进行json转换（@requestBody和@responseBody�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image070.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image070.jpg)
 
  
 
 #### 8.4.1.2             controller
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image072.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image072.jpg)
 
  
 
 #### 8.4.1.3             测试结果
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image074.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image074.jpg)
 
 ### 8.4.2    输入key/value，输出是json串
 
@@ -978,7 +978,7 @@ springmvc中使用jackson的包进行json转换（@requestBody和@responseBody�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image076.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image076.jpg)
 
  
 
@@ -986,7 +986,7 @@ springmvc中使用jackson的包进行json转换（@requestBody和@responseBody�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image078.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image078.jpg)
 
  
 
@@ -994,7 +994,7 @@ springmvc中使用jackson的包进行json转换（@requestBody和@responseBody�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image080.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image080.jpg)
 
  
 
@@ -1060,7 +1060,7 @@ REST的url风格：http://..../items/001
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image082.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image082.jpg)
 
  
 
@@ -1080,7 +1080,7 @@ REST的url风格：http://..../items/001
 
 在web.xml配置：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image084.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image084.jpg)
 
  
 
@@ -1092,7 +1092,7 @@ REST的url风格：http://..../items/001
 
 配置前端控制器的url-parttern中指定/，对静态资源的解析出现问题：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image086.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image086.jpg)
 
  
 
@@ -1100,7 +1100,7 @@ REST的url风格：http://..../items/001
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image088.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image088.jpg)
 
  
 
@@ -1232,7 +1232,7 @@ springmvc配置类似全局的拦截器，springmvc框架将配置的类似全�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image090.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image090.jpg)
 
  
 
@@ -1250,7 +1250,7 @@ springmvc配置类似全局的拦截器，springmvc框架将配置的类似全�
 
 ### 10.3.2             编写两个拦截
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image092.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image092.jpg)
 
  
 
@@ -1504,7 +1504,7 @@ HandlerInterceptor1...preHandle
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image094.jpg)
+![img](https://github.com/jjj2010/other/blob/master/springmvc02/pic/clip_image094.jpg)
 
  
 
