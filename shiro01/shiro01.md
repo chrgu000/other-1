@@ -84,7 +84,7 @@ shiro基础：
 
 ### 3.2.2    用户认证流程
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image002.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image002.jpg)
 
  
 
@@ -124,7 +124,7 @@ credential：凭证信息，可以是密码、证书、指纹。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image004.jpg)
+![img](E:\gitrepo\other\shiro01\pic\clip_image004.jpg)
 
  
 
@@ -178,7 +178,7 @@ how：权限/许可(**permission**) ，针对资源的权限或许可，subject�
 
 如下图：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image006.gif)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image006.gif)
 
 通常企业开发中将资源和权限表合并为一张权限表，如下：
 
@@ -192,7 +192,7 @@ how：权限/许可(**permission**) ，针对资源的权限或许可，subject�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image008.gif)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image008.gif)
 
 上图常被称为权限管理的通用模型，不过企业在开发中根据系统自身的特点还会对上图进行修改，但是用户、角色、权限、用户角色关系、角色权限关系是需要去理解的。
 
@@ -388,7 +388,7 @@ shiro就是一个优秀权限管理框架。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image010.gif)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image010.gif)
 
  
 
@@ -406,7 +406,7 @@ mysql5.1数据库中创建表：用户表、角色表、权限表(实质上是�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image012.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image012.jpg)
 
  
 
@@ -414,7 +414,7 @@ mysql5.1数据库中创建表：用户表、角色表、权限表(实质上是�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image014.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image014.jpg)
 
  
 
@@ -440,7 +440,7 @@ springmvc+mybatis+jquery easyui
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image016.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image016.jpg)
 
  
 
@@ -472,7 +472,7 @@ springmvc+mybatis+jquery easyui
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image018.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image018.jpg)
 
  
 
@@ -484,7 +484,7 @@ mapper接口：　根据用户账号查询用户（sys_user）信息（使用逆
 
 使用逆向工程生成以下表的基础代码：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image020.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image020.jpg)
 
  
 
@@ -500,7 +500,7 @@ mapper接口：　根据用户账号查询用户（sys_user）信息（使用逆
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image022.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image022.jpg)
 
  
 
@@ -508,7 +508,7 @@ mapper接口：　根据用户账号查询用户（sys_user）信息（使用逆
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image024.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image024.jpg)
 
  
 
@@ -526,7 +526,7 @@ mapper接口：　根据用户账号查询用户（sys_user）信息（使用逆
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image026.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image026.jpg)
 
  
 
@@ -612,7 +612,7 @@ mapper接口：　根据用户账号查询用户（sys_user）信息（使用逆
 
 在springmvc.xml中配置拦截器
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image028.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image028.jpg)
 
  
 
@@ -632,13 +632,13 @@ mapper接口：　根据用户账号查询用户（sys_user）信息（使用逆
 
 在用户认证时，认证通过，根据用户id从数据库获取用户权限范围的菜单，将菜单的集合存储在session中。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image030.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image030.jpg)
 
 mapper接口：根据用户id查询用户权限的菜单
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image032.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image032.jpg)
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image034.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image034.jpg)
 
  
 
@@ -646,7 +646,7 @@ mapper接口：根据用户id查询用户权限的菜单
 
 service接口：根据用户id查询用户权限的菜单
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image036.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image036.jpg)
 
  
 
@@ -658,21 +658,21 @@ service接口：根据用户id查询用户权限的菜单
 
 在用户认证时，认证通过，根据用户id从数据库获取用户权限范围的url，将url的集合存储在session中。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image038.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image038.jpg)
 
  
 
 mapper接口：根据用户id查询用户权限的url
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image040.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image040.jpg)
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image042.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image042.jpg)
 
  
 
 service接口：根据用户id查询用户权限的url
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image044.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image044.jpg)
 
  
 
@@ -684,7 +684,7 @@ service接口：根据用户id查询用户权限的url
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image046.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image046.jpg)
 
  
 
@@ -696,7 +696,7 @@ service接口：根据用户id查询用户权限的url
 
 修改first.jsp，动态从session中取出菜单显示：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image048.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image048.jpg)
 
  
 
@@ -820,7 +820,7 @@ service接口：根据用户id查询用户权限的url
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image050.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image050.jpg)
 
  
 
@@ -866,7 +866,7 @@ shiro不依赖于spring，shiro不仅可以实现 web应用的权限管理，还
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image052.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image052.jpg)
 
  
 
@@ -999,7 +999,7 @@ cryptography：密码管理，提供了一套加密/解密的组件，方便开�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image054.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image054.jpg)
 
  
 
@@ -1013,7 +1013,7 @@ cryptography：密码管理，提供了一套加密/解密的组件，方便开�
 
 ## 7.1    shiro认证流程
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image056.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image056.jpg)
 
  
 
@@ -1023,11 +1023,11 @@ jar包：shiro-core.jar
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image058.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image058.jpg)
 
 工程结构：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image060.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image060.jpg)
 
  
 
@@ -1055,7 +1055,7 @@ jar包：shiro-core.jar
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image062.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image062.jpg)
 
  
 
@@ -1063,7 +1063,7 @@ jar包：shiro-core.jar
 
 配置数据：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image064.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image064.jpg)
 
  
 
@@ -1217,7 +1217,7 @@ realm：需要根据token中的身份信息去查询数据库（入门程序使�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image066.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image066.jpg)
 
  
 
@@ -1225,7 +1225,7 @@ realm：需要根据token中的身份信息去查询数据库（入门程序使�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image068.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image068.jpg)
 
  
 
@@ -1235,7 +1235,7 @@ realm：需要根据token中的身份信息去查询数据库（入门程序使�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image070.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image070.jpg)
 
  
 
@@ -1275,7 +1275,7 @@ Factory<SecurityManager>factory = **new** IniSecurityManagerFactory(
 
 ### 7.5.1    md5散列测试程序：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image072.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image072.jpg)
 
  
 
@@ -1293,7 +1293,7 @@ Factory<SecurityManager>factory = **new** IniSecurityManagerFactory(
 
 #### 7.5.2.1             新建realm(CustomRealmMd5)
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image074.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image074.jpg)
 
  
 
@@ -1301,7 +1301,7 @@ Factory<SecurityManager>factory = **new** IniSecurityManagerFactory(
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image076.jpg)
+![img](https://github.com/jjj2010/other/tree/master/shiro01/pic/clip_image076.jpg)
 
  
 
