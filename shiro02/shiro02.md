@@ -126,7 +126,7 @@ realm（一般需要自定义）：相当于数据源，认证器需要realm从�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image002.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image002.jpg)
 
  
 
@@ -230,7 +230,7 @@ user：*：01  表示对用户资源实例01进行所有操作。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image004.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image004.jpg)
 
  
 
@@ -254,7 +254,7 @@ user：*：01  表示对用户资源实例01进行所有操作。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image006.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image006.jpg)
 
  
 
@@ -436,7 +436,7 @@ shiro-spring的jar
 
 shiro-code的jar
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image008.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image008.jpg)
 
  
 
@@ -458,7 +458,7 @@ shiro提供很多filter。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image010.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image010.jpg)
 
  
 
@@ -470,7 +470,7 @@ shiro提供很多filter。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image012.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image012.jpg)
 
  
 
@@ -484,7 +484,7 @@ shiro提供很多filter。
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image014.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image014.jpg)
 
  
 
@@ -522,7 +522,7 @@ realm认证时根据username查询用户信息（在Activeuser中存储，包括
 
 ### 5.8.3    登陆代码实现
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image016.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image016.jpg)
 
  
 
@@ -534,7 +534,7 @@ realm认证时根据username查询用户信息（在Activeuser中存储，包括
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image018.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image018.jpg)
 
  
 
@@ -556,7 +556,7 @@ realm认证时根据username查询用户信息（在Activeuser中存储，包括
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image020.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image020.jpg)
 
  
 
@@ -564,7 +564,7 @@ realm认证时根据username查询用户信息（在Activeuser中存储，包括
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image022.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image022.jpg)
 
  
 
@@ -588,7 +588,7 @@ realm从数据库查询用户信息，将用户菜单、usercode、username等�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image024.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image024.jpg)
 
  
 
@@ -596,7 +596,7 @@ realm从数据库查询用户信息，将用户菜单、usercode、username等�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image026.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image026.jpg)
 
  
 
@@ -636,7 +636,7 @@ realm从数据库查询用户信息，将用户菜单、usercode、username等�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image028.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image028.jpg)
 
  
 
@@ -697,7 +697,7 @@ user:例如/admins/user/**=user没有参数表示必须存在用户,身份认证
 
 1、将SysService注入到realm中。
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image030.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image030.jpg)
 
  
 
@@ -827,7 +827,7 @@ user:例如/admins/user/**=user没有参数表示必须存在用户,身份认证
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image032.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image032.jpg)
 
  
 
@@ -939,7 +939,7 @@ user:例如/admins/user/**=user没有参数表示必须存在用户,身份认证
 
 在springmvc.xml中配置：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image034.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image034.jpg)
 
  
 
@@ -947,15 +947,15 @@ user:例如/admins/user/**=user没有参数表示必须存在用户,身份认证
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image036.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image036.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image038.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image038.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image040.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image040.jpg)
 
  
 
@@ -992,7 +992,7 @@ Jsp页面添加：
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image042.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image042.jpg)
 
 ### 5.14.6             授权测试
 
@@ -1040,7 +1040,7 @@ shiro中提供了对认证信息和授权信息的缓存。shiro默认是关闭�
 
 #### 5.15.2.1       添加Ehcache的jar包
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image044.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image044.jpg)
 
  
 
@@ -1048,11 +1048,11 @@ shiro中提供了对认证信息和授权信息的缓存。shiro默认是关闭�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image046.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image046.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image048.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image048.jpg)
 
  
 
@@ -1062,7 +1062,7 @@ shiro中提供了对认证信息和授权信息的缓存。shiro默认是关闭�
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image050.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image050.jpg)
 
  
 
@@ -1108,7 +1108,7 @@ shiro中提供了对认证信息和授权信息的缓存。shiro默认是关闭�
 
 测试清除缓存controller方法：
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image052.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image052.jpg)
 
  
 
@@ -1124,11 +1124,11 @@ shiro中提供了对认证信息和授权信息的缓存。shiro默认是关闭�
 
 配置sessionManager
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image054.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image054.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image056.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image056.jpg)
 
  
 
@@ -1148,7 +1148,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image058.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image058.jpg)
 
  
 
@@ -1158,11 +1158,11 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image060.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image060.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image062.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image062.jpg)
 
  
 
@@ -1170,7 +1170,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image064.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image064.jpg)
 
  
 
@@ -1178,7 +1178,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image066.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image066.jpg)
 
  
 
@@ -1188,7 +1188,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image068.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image068.jpg)
 
  
 
@@ -1208,13 +1208,13 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image070.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image070.jpg)
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image072.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image072.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image074.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image074.jpg)
 
  
 
@@ -1224,11 +1224,11 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image076.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image076.jpg)
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image078.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image078.jpg)
 
  
 
@@ -1236,7 +1236,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image080.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image080.jpg)
 
  
 
@@ -1244,7 +1244,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image082.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image082.jpg)
 
  
 
@@ -1258,7 +1258,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image084.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image084.jpg)
 
  
 
@@ -1268,7 +1268,7 @@ shiro使用FormAuthenticationFilter进行表单认证，验证校验的功能应
 
  
 
-![img](file:///C:\Users\jiao\AppData\Local\Temp\msohtmlclip1\01\clip_image086.jpg)
+![img](https://github.com/jjj2010/other/blob/master/shiro02/pic/clip_image086.jpg)
 
  
 
