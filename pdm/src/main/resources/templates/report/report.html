@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="base">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{report}">统计报表</title>
+
+	<script type="text/javascript" src="/webResources/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/report/report.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/report/one.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/report/two.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/report/three.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/report/four.js"></script>
+
+</head>
+
+<body>
+	<div layout:fragment="content" >
+		<div class="table-top">
+		    <div class="title-big" th:text="#{report}">
+		        	统计报表
+		    </div>
+		    <div class="title-small">
+		        >
+		    </div>
+		</div>
+		<div class="companyMgr-page" style="padding: 1.5%;padding-bottom: 0.2%;text-align: center">
+			<span style="color: red;font-size: 12px;display: inline-block;margin-bottom: 1%">tips: 统计报表为定制化页面</span>
+		    <div class="half-div">
+		    	<a href="/report/management/one/view">
+		    		<div class="small-charts-left" id="one"></div>
+		    	</a>
+		        <a href="/report/management/two/view">
+		    		<div class="small-charts-right" id="two"></div>
+		    	</a>
+		    </div>
+		    <div class="half-div">
+		    	<a href="/report/management/three/view">
+		    		<div class="small-charts-left" id="three"></div>
+		    	</a>
+		        <a href="/report/management/four/view">
+		    		<div class="small-charts-right" id="four"></div>
+		    	</a>
+		    </div>
+		</div>
+	</div>
+</body>
+
+
+</html>
+

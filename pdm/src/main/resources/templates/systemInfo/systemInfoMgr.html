@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	  layout:decorator="base">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{systemInfoMgr}">系统设置</title>
+
+	<link href="/webResources/plugins/fileinput/css/fileinput.css" rel="stylesheet"/>
+	<link href="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet"/>
+	<link href="/webResources/css/custom/validate.css" rel="stylesheet"/>
+	<link href="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="/webResources/plugins/chosen/chosen.css" />
+
+	<style type="text/css">
+		.ui-autocomplete {
+			display: block;
+			z-index: 99999;
+		}
+	</style>
+
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-validate/dist/jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-validate/dist/localization/messages_zh.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-form/jquery.form.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-BlockUI/jquery.blockUI.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/chosen/chosen.jquery.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/fileinput/js/fileinput.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/fileinput/js/locales/zh.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/device/save.js" ></script>
+	<script>
+        $(document).ready(function() {
+            $("#systemInfoForm").validate({
+                //debug:true,
+                ignore: ":hidden:not(select)",
+                rules : {
+                    "name" : {
+                        required : true,
+                    },
+                    "version" : {
+                        required : true,
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    if(element.parent('#remindReceiversSelect').length) {
+                        error.insertAfter(element.parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                submitHandler: function(form) {
+
+                    var options = {
+                        type : "post",
+                        url : '/systemInfo/updateSystemInfo',
+                        success : function(data) {
+                            $.unblockUI();
+                            if(data.result=='success'){
+                                info('操作成功');
+                            }else if(data.result=='error'){
+                                warning('操作失败:'+data.message);
+                            }else{
+                                warning('操作失败');
+                            }
+                        }
+                    };
+
+                    $.blockUI({
+                        message: '<div class="lds-css ng-scope"><div class="lds-spinner" style="100%;height:100%"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>',
+                        // 指的是提示框的css
+                        css: {
+                            width: "0px",
+                            top: "40%",
+                            left: "50%"
+                        },
+                    });
+                    if($("#uploadLoginImage").val() || $("#uploadIndexImage").val()){
+                        $(form).ajaxSubmit(options);
+                    }else {
+                        $.unblockUI();
+                        warning('LOGO不能为空');
+                        return;
+					}
+                }
+            });
+            $("#uploadLoginImage").fileinput({
+                language: 'zh', //设置语言
+                maxFileCount: 10,
+                showUpload: false, //是否显示上传按钮
+                maxFileSize : 50000,
+                allowedFileExtensions: ["jpg","jpeg","png"]
+            });
+            $("#uploadIndexImage").fileinput({
+                language: 'zh', //设置语言
+                maxFileCount: 10,
+                showUpload: false, //是否显示上传按钮
+                maxFileSize : 50000,
+                allowedFileExtensions: ["jpg","jpeg","png"]
+            });
+
+        })
+	</script>
+</head>
+
+<body>
+<div layout:fragment="content" >
+	<div class="table-top">
+		<div class="title-big" th:text="#{systemInfoMgr}">
+			系统设置
+		</div>
+	</div>
+	<div class="companyMgr-edge" style="height: 1000px">
+		<form class="form-horizontal" role="form" th:object="${systemInfo}" id="systemInfoForm" >
+			<input type="hidden" id="systemInfoId" name="systemInfoId" th:value="${systemInfo.id}"/>
+			<fieldset>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"  th:text="#{systemInfo.name}" for="name">系统名称</label>
+					<div class="col-sm-5">
+						<input type="text" th:field="*{name}" id="name" class="form-control" th:placeholder="#{systemInfo.name}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"  th:text="#{systemInfo.version}" for="name">版本信息</label>
+					<div class="col-sm-5">
+						<input type="text" th:field="*{version}" id="version" class="form-control" th:placeholder="#{systemInfo.version}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"  th:text="#{systemInfo.login.logo}" for="name">登录页LOGO</label>
+					<div class="col-sm-5">
+						<input type="file" id="uploadLoginImage" multiple="multiple" name="uploadLoginImage" data-show-caption="true"/>
+						<span style="color: #0b74d5;">请选择1M以内图片,推荐尺寸:180*50</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"  th:text="#{systemInfo.index.logo}" for="name">首页LOGO</label>
+					<div class="col-sm-5">
+						<input type="file" id="uploadIndexImage" multiple="multiple" name="uploadIndexImage" data-show-caption="true"/>
+						<span style="color: #0b74d5;">请选择1M以内图片,推荐尺寸:121*35</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-7 control-label"></label>
+					<div class="col-sm-1">
+						<button id="add" class="company-button-new" style="background:#0688EC;height: 30px;margin-top: 10%;font-size: 16px;" th:text="#{update}">
+							更新
+						</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+</div>
+</body>
+</html>
+

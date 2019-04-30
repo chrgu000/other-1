@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="base">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{sensor.detail}">sensor详情</title>
+
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.theme.css" />
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/jqgrid/css/ui.jqgrid.css" />
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/pageJquery/css/zxf_page.css"/>
+	<link href="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+
+	<style>
+        .ui-jqgrid-htable{
+            height: 40px;font-size: 14px;color: #80909c;font-weight: 500;
+        }
+        .ui-jqgrid .ui-jqgrid-htable th div {
+            overflow: hidden;
+            position: relative;
+            height: 40px;
+            padding-top: 10px;color: #798692;font-weight: 500;
+        }
+        .ui-jqgrid .ui-jqgrid-htable .ui-th-div {
+		    height: 40px;
+		    margin-top: 5px;
+		    display: inline-block;
+		}
+        .ui-jqgrid .ui-jqgrid-resize {
+            height: 40px !important;
+            position: relative;
+            cursor: e-resize;
+            display: inline;
+            overflow: hidden;
+        }
+        .ui-jqgrid tr.jqgrow {
+            outline-style: none;
+            height: 40px;
+        }
+        .ui-jqgrid tr.ui-row-ltr td {
+            text-align: left;
+            border-right-width: 0px;
+            border-right-color: inherit;
+            border-right-style: solid;
+            color: #333333;
+            font-size: 14px;
+        }
+        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+            border: 0px solid #fcd3a1;
+            background: #fbf8ee;
+            color: #444;
+        }
+        .ui-widget-content {
+            border: 1px solid #eee;
+            background: #fff;
+        }
+        .ui-jqgrid tr:nth-child(even) {
+            background: #F4F8F9;
+        }
+        .ui-jqgrid tr:nth-child(odd) {
+            background: #FFFFFF;
+        }
+        .table-tr{
+            height: 5px;
+        }
+
+		.netWork{
+			white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+		}
+		.wei-show{
+			height: 35px;
+			width:90px;
+			margin-top: 12px;
+			text-align: center;
+			background-color: #999;
+			border: none;
+			color: white;
+			border-radius: 5px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden
+		}
+    </style>
+
+	<script type="text/javascript" src="/webResources/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jqgrid/js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jqgrid/src/i18n/grid.locale-cn.js"></script>
+    <script type="text/javascript" src="/webResources/plugins/vue/vue.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/sensor/detail.js" ></script>
+	<!--<script type="text/javascript" src="/webResources/js/custom/sensor/detail-allData.js" ></script>-->
+	<script type="text/javascript" src="/webResources/js/custom/sensor/detail-alarmData.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/pageJquery/js/zxf_page.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/page/createPage.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-BlockUI/jquery.blockUI.js" ></script>
+    <!-- element组建js引入 -->
+    <script type="text/javascript" src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<!-- datetimepicker时间插件 -->
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" ></script>
+
+</head>
+
+<body>
+	<div layout:fragment="content" >
+		<input type="hidden" id="serialNo" name="serialNo" th:value="${serialNo}"/> <!-- 点位uid -->
+		<input type="hidden" id="iotSerialNo" name="iotSerialNo" th:value="${iotSerialNo}"/> <!-- 网元号 -->
+		<input type="hidden" id="deviceSN" name="deviceSN" th:value="${deviceSN}"/> <!-- 设备序列号 -->
+		<input type="hidden" id="deviceId" name="deviceId" th:value="${deviceId}"/> <!-- 设备id -->
+		<div class="table-top">
+		    <div class="title-big" style="width: 7%" th:text="#{sensor.detail}">
+		        	传感器管理
+		    </div>
+		    <div class="title-small">
+
+		    </div>
+			<a href="javascript:void(0)" onclick="javascript:history.go(-1);return false;" >
+		    	<button class="back" th:text="#{return}"></button>
+		    </a>
+		</div>
+		<div class="companyMgr-page" style="padding: 1.5% 2.5%" >
+		    <div id="detail" class="sensor-div-top" v-cloak="v-cloak">
+		        <div class="sensor-top-left" style="padding-top: 3%">
+					<!--<a v-bind:href="'/iotx/management/detail/'+detailData['dust.iotx.id']+'/view'">-->
+					<!--<a v-bind:href="iotxUrl">-->
+                    <div class="sensor-top-left-div">
+			                <div style="width: 100%;height: 70%">
+		                		<img src="/webResources/img/iotx/iotx-top-img.png" style="width:100%;"/>
+			                </div>
+			                <div style="width: 100%;height: 30%">
+			                    <div class="half-div">
+			                        IOT-X
+			                    </div>
+			                    <div class="half-div netWork"  id="iotxUid">
+			                        {{uid}}
+			                    </div>
+			                </div>
+					</div>
+		            <!--</a>-->
+		            <div class="connect-img">
+		                <img src="/webResources/img/iotx/sensor-top.png" style="width:100%;"/>
+					</div>
+					<div class="sensor-top-left-div">
+						<div style="width: 100%;height: 70%">
+							<img src="/webResources/img/iotx/iotx-top-img2.png" style="width:100%;"/>
+						</div>
+						<div style="width: 100%;height: 30%">
+							<div class="half-div" th:text="#{sensor}">
+									网元号
+							</div>
+							<div class="half-div" style="color: #6DB2CF"  id="iotxNo">
+								 {{iotSerialNo}}
+							</div>
+						</div>
+					</div>
+
+		            <div class="connect-img">
+		                <img src="/webResources/img/iotx/sensor-top.png" style="width:100%;"/>
+		            </div>
+		            <!--<a v-bind:href="deviceUrl">-->
+                    <div class="sensor-top-left-div">
+			                <div style="width: 100%;height: 70%">
+			                    <img src="/webResources/img/iotx/iotx-top-img3.png" style="width:100%;"/>
+			                </div>
+			                <div style="width: 100%;height: 30%">
+			                    <div class="half-div" th:text="#{sensor.device}">
+			                        	连接设备
+			                    </div>
+			                    <div class="half-div">
+			                         <!--{{detailData['dust.device.serialNo']}}-->
+			                         {{deviceSN}}
+			                    </div>
+			                </div>
+			            </div>
+		            <!--</a>-->
+		        </div>
+		        <div class="sensor-top-right">
+		            <div class="sensor-data" style="float: left;background: #FCAFA1">
+		                <div class="half-div" style="font-weight: 500;font-size: 28px;padding-top:20%;text-align: center">
+		                        <!--{{nowReading}}-->
+		                        {{val}}
+		                </div>
+		                <div th:text="#{sensor.nowReading}" class="half-div" style="padding-top:10%;font-weight: 500;font-size: 18px;text-align: center">
+		                        	当前读数
+		                </div>
+		            </div>
+					<!--<div v-if="detailData.isWorked" class="sensor-data" style="float: right;margin-left: 1%;background: #C4C5C8">-->
+					<div  class="sensor-data" style="float: right;margin-left: 1%;background: #C4C5C8">
+		                <div class="half-div" style="font-weight: 500;font-size: 28px;padding-top:20%;text-align: center">
+		                    <img src="/webResources/img/iotx/sensordetails_run.png"/>
+		                </div>
+		                <div th:text="#{sensor.run}" class="half-div" style="padding-top:10%;font-weight: 500;font-size: 18px;text-align: center">
+		                    	采集中
+		                </div>
+		            </div>
+					<!--<div v-if="!detailData.isWorked" class="sensor-data" style="float: right;margin-left: 1%;background: #C4C5C8">-->
+					<!--<div  class="sensor-data" style="float: right;margin-left: 1%;background: #C4C5C8">
+		                <div class="half-div" style="font-weight: 500;font-size: 28px;padding-top:20%;text-align: center">
+		                    <img src="/webResources/img/iotx/sensordetails_stop.png"/>
+		                </div>
+		                <div th:text="#{sensor.stop}" class="half-div" style="padding-top:10%;font-weight: 500;font-size: 18px;text-align: center">
+		                    	停止采集
+		                </div>
+		            </div>-->
+		            <div class="sensor-data-on">
+		                <div th:text="#{sensor.maxVal}" class="sensor-data-on-left">
+		                    	上限
+		                </div>
+		                <div class="sensor-data-on-right">
+		                    <!--{{detailData.maxVal + detailData.unit}}-->
+		                </div>
+		            </div>
+		            <div class="sensor-data-on">
+		                <div th:text="#{sensor.minVal}" class="sensor-data-on-left">
+		                    	下限
+		                </div>
+		                <div class="sensor-data-on-right">
+		                    <!--{{detailData.minVal + detailData.unit}}-->
+		                </div>
+		            </div>
+		        </div>
+
+		    </div>
+		    <div id="paging" class="sensor-div-right">
+		        <div class="sensor-div-right-top">
+		            <div th:text="#{sensor.alarm.record}" class="sensor-warnings-title">
+		                	告警记录
+		            </div>
+		            <div class="sensor-warnings-data">
+		                <div class="half-div" style="color:#FFFFFF;font-weight: 500;font-size: 23px;padding-top:5%;text-align: center">
+		                    {{alarmQuantity}}
+		                </div>
+		                <div th:text="#{sensor.alarmQuantity}" class="half-div" style="color:#FFFFFF;font-weight: 500;font-size: 14px;text-align: center">
+		                    	告警总量
+		                </div>
+		            </div>
+		        </div>
+		        <!--<div style="width: 100%;height: 88.5%;background: #FFFFFF;">-->
+                <div class="box-body" style="margin-top: -20px;">
+		                <div class="data-table" style="margin-top: -20px;">
+		                    <table id="alarmDataTable"></table>
+		                    <div style="margin-top:5%;margin-right: 40%">
+		                    	<a v-if="last" href="#" v-on:click="nextPageClick" style="float: right;margin-right: 2%">
+				                    <img src="/webResources/img/page/nextPage.png"/>
+				                </a>
+				                <a v-if="!last" style="float: right;margin-right: 2%">
+				                	<img src="/webResources/img/page/nextPage_un.png"/>
+				                </a>
+			                	<a v-if="first" href="#" v-on:click="lastPageClick" style="float: right;margin-right: 2%">
+					                <img src="/webResources/img/page/lastPage.png"/>
+				                </a>
+				                <a v-if="!first" style="float: right;margin-right: 2%">
+				                	<img src="/webResources/img/page/lastPage_un.png"/>
+				                </a>
+		                    </div>
+		                </div>
+		            </div>
+		        <!--</div>-->
+		    </div>
+		    <div class="sensor-div-bottom">
+		        <div class="tabbable" style="width: 100%;height: 100%;">
+
+					<!--时间选择器-->
+					<div class="choseEle" style="margin-left: 5px;overflow:hidden;float:left;width: 700px;height: 50px;margin-top:-10px;">
+						<!--<div style="font-size: 15px;margin-top: 100px;" th:text="#{document.search.uploadTime}">
+							按上传日期查询:
+						</div>-->
+						<div class="select" style="height: 45px;width:450px;margin-top: 5px;">
+							<input class="form-control input-sm" style="margin-top:7px;float:left;width:97%;height: 35px;width: 200px;" id="lowerLimitPLC" name="lowerLimit" type="text" th:placeholder="#{document.search.uploadTime.from}"/>
+							<input class="form-control input-sm" style="margin-top:7px;margin-left: 12px;float:left;width:97%;height: 35px;width: 200px;" id="upperLimitPLC" name="upperLimit" type="text" th:placeholder="#{document.search.uploadTime.to}"/>
+						</div>
+						<!--类型选择-->
+						<div class="select-type" id="typePLC" style="width: 120px;margin-top: -50px;margin-left: 422px;float:left;">
+							<!--<div style="font-size: 15px;">数据类型</div>-->
+							<input type="text" id="pointtype" name="type" th:value="${name}" disabled="true" class="wei-show"/>
+							<!--<select id="changeTypePLC" style="border: 1px solid #D0D0D0;border-radius: 3px;height: 35px;width:70px;margin-top: 12px;">
+								<option value ="temperature">温度</option>
+								<option value ="humidity">湿度</option>
+								<option value ="dust">粉尘</option>
+								<option value ="pressure">压力</option>
+								<option value ="airVolume">风量</option>
+								<option value ="dropoutVol">压差</option>
+							</select>-->
+						</div>
+						<div class="knowledgebutton" style="margin-top: -38px;width:150px;float:left;margin-left:520px;">
+							<button class="company-button-new" id="emptyPLC" style="margin-left:10px;width:60px;padding: 0;line-height: 0px; font-size:14px;height: 35px !important;margin-top: 0%" th:text="#{empty}">默认按钮</button>
+							<button type="primary" class="company-button-import" id="confirmPLC" style="margin-left:10px;width:60px;padding: 0;line-height: 0px;margin-left:-2%;font-size:14px;height: 35px !important;margin-top: 0%" th:text="#{confirm}">确认</button>
+						</div>
+					</div>
+		            <ul class="nav nav-tabs" style="width: 50%;float: left;margin-top: 10px;">
+		                <li data-tab="tab1" class="active" style="width: 24%;font-size: 14px;margin-left: 1px"><a href="#tab_1_1" data-toggle="tab" id="raw-data" aria-expanded="false" th:text="#{iotxData.line.history}">历史曲线</a></li>
+		                <li data-tab="tab2" style="width: 24%;font-size: 14px;margin-left: 1px" class="" ><a href="#tab_1_2" data-toggle="tab" id="back-data" aria-expanded="true" th:text="#{iotxData.history}">历史数据</a></li>
+		            </ul>
+
+		            <div class="tab-content" style="width: 100%;height: 100%;padding-top: 6%">
+		                <div class="tab-pane fade active in" id="tab_1_1" style="width: 100%;height: 100%;">
+		                    <div id="loy-tab" style="width: 100%;height: 433px">
+		                    </div>
+		                </div>
+		                <div class="tab-pane fade" id="tab_1_2" style="width: 100%;height: 100%;">
+
+		                    <div class="box-body" >
+								<!---->
+		                        <div class="data-table" style="margin-top:40px;">
+									<!--<a th:href="'/iotxData/export/allData?sensorSN='+${serialNo}">
+										<button th:text="#{export}" class="btn btn-info">
+											导出
+										</button>
+									</a>-->
+		                    		<div class="box-body">
+		                        <div class="data-table" style="margin-left:6%">
+									<a href="#" id="exportHistory" class="btn btn-info" th:text="#{export}">
+                                        导出
+										<!--<button th:text="#{export}" class="btn btn-info" id="exportHistoryBtn">-->
+											<!--导出-->
+										<!--</button>-->
+									</a>
+									<span>最大只支持导出1000条记录.</span>
+									<table id="allDataTable"></table>
+				                    <div id="allDataPager" style="padding-right:6%;margin-top:1%"></div>
+				                </div>
+		                    </div>
+								</div>
+		                	</div>
+		            	</div>
+		        	</div>
+		        </div>
+		    </div>
+	    </div>
+	</div>
+</body>
+
+
+</html>
+

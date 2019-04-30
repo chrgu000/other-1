@@ -1,0 +1,144 @@
+package com.anosi.asset.model.mongo;
+
+import java.math.BigInteger;
+import java.util.Date;
+
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.alibaba.fastjson.annotation.JSONField;
+import com.anosi.asset.util.FormatUtil;
+
+@Document
+public class FileMetaData extends AbstractDocument {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2638537610522555992L;
+
+	@Indexed
+	private String identification;// 组标识，下次可以通过标识找到相应的fileList
+
+	private String uploader;
+	
+	private String uploaderName;
+	
+	private Date uploadTime;
+
+	private String fileName;
+
+	private Long fileSize;
+
+	@Indexed(unique = true)
+	private BigInteger objectId;// 文件的唯一id
+
+	private BigInteger preview;// 预览文件的唯一id
+
+	private Long deviceId;//关联的设备id
+
+	public String getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(String identification) {
+		this.identification = identification;
+	}
+
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
+	public Date getUploadTime() {
+		return uploadTime;
+	}
+
+	public void setUploadTime(Date uploadTime) {
+		this.uploadTime = uploadTime;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public BigInteger getObjectId() {
+		return objectId;
+	}
+
+	public void setObjectId(BigInteger objectId) {
+		this.objectId = objectId;
+	}
+
+	public BigInteger getPreview() {
+		return preview;
+	}
+
+	public void setPreview(BigInteger preview) {
+		this.preview = preview;
+	}
+
+	public Long getFileSize() {
+		return fileSize;
+	}
+
+	public void setFileSize(Long fileSize) {
+		this.fileSize = fileSize;
+	}
+
+	public String getUploader() {
+		return uploader;
+	}
+
+	public void setUploader(String uploader) {
+		this.uploader = uploader;
+	}
+
+	public String getSuffix() {
+		return fileName.substring(fileName.lastIndexOf(".") + 1).toUpperCase();
+	}
+	
+	public String getUploaderName() {
+		return uploaderName;
+	}
+
+	public void setUploaderName(String uploaderName) {
+		this.uploaderName = uploaderName;
+	}
+
+	public Long getDeviceId() {
+		return deviceId;
+	}
+
+	public void setDeviceId(Long deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	@Override
+	public String toString() {
+		return "FileMetaData [identification=" + identification + ", uploader=" + uploader + ", uploadTime="
+				+ uploadTime + ", fileName=" + fileName + ", fileSize=" + fileSize + ", objectId=" + objectId + ", deviceId=" + deviceId + "]";
+	}
+
+	/***
+	 * 由于前端不能识别bigInteger这种大数字，需要提供一个objectId的string版本
+	 * 
+	 * @return
+	 */
+	public String getStringObjectId() {
+		if (objectId != null) {
+			return objectId.toString();
+		}
+		return null;
+	}
+
+	/***
+	 * 返回文件大小 -h
+	 * 
+	 * @return
+	 */
+	public String getFileSizeH() {
+		return FormatUtil.getFileSizeH(fileSize);
+	}
+
+}

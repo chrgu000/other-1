@@ -1,0 +1,132 @@
+.device-top-img {
+    background: #FFFFFF;
+    height: 100%;
+    border: solid #E8E9EB 1px;
+    margin-top: 1%;
+    padding-top: 15px;
+}
+
+.device-top-tec {
+    width: 100%;
+    height: 15%;
+    padding: 0px;
+}
+
+.detail-tab {
+    font-size: 14px;
+    background: #FFFFFF;
+    height: 100%;
+    width: 13.1%;
+    margin-left: 1%;
+    padding: 0px;
+    border: solid 1px #dddddd;
+}
+
+.detail-tab:hover {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+}
+
+.tab-img {
+    width: 24%;
+    height: 100%;
+    float: left;
+    min-width: 50px;
+}
+
+#topo-img {
+    height: 435px;
+    width: 80%;
+    background: red;
+    float: left;
+    margin-top: 22px;
+}
+
+#topo-right {
+    width: 20%;
+    height: 435px;
+    float: right;
+    background: #FFFFFF;
+    margin-top: 22px;
+    margin-left: -1px;
+}
+
+#topo-button {
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    border: solid #E8E9EB 1px;
+    border-left: 0px;
+}
+
+#topobutton-one {
+    width: 75%;
+    height: 35px;
+    background: #169BD5;
+    margin-top: 10px;
+    margin-left: 12%;
+    border: 0px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+#topobutton-two {
+    width: 75%;
+    height: 35px;
+    background: #ffffff;
+    margin-top: 6px;
+    margin-left: 12%;
+    border: solid #169BD5 1px;
+    color: #169BD5;
+    font-size: 14px;
+}
+
+.topo-data {
+    height: 67px;
+    border: solid #E8E9EB 1px;
+    border-left: 0px;
+}
+
+.topo-data-up {
+    height: 50%;
+    font-size: 14px;
+    padding-top: 14px;
+    text-align: center;
+}
+
+.topo-data-down {
+    height: 50%;
+    font-size: 14px;
+    color: #169BD5;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.tab-right {
+    float: right;
+}
+
+#img-top-left {
+    width: 73.3%;
+    height: 100%;
+    float: left;
+    background-size: 100% 100%;
+    border: solid #E8E9EB 1px
+}
+
+.up-down {
+    width: 100%;
+    float: right;
+    height: 50%;
+    border: solid #E8E9EB 1px
+}
+
+.up-down-img {
+    height: 66.6%;
+}
+
+.up-down-zi {
+    height: 33.3%;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5%;
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	  layout:decorator="base">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{detail}">详情</title>
+
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.theme.css" />
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/jqgrid/css/ui.jqgrid.css" />
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/pageJquery/css/zxf_page.css"/>
+	<link rel="stylesheet" type="text/css" href="/webResources/css/custom/devicedetail.css"/>
+	<link href="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/carousel/style.css"/>
+
+	<style>
+		.ui-jqgrid-htable{
+			height: 50px;font-size: 14px;color: #80909c;font-weight: 500;
+		}
+		.ui-jqgrid .ui-jqgrid-htable th div {
+			overflow: hidden;
+			position: relative;
+			height: 50px;
+			padding-top: 5px;color: #BBC5D2;font-weight: 800;
+		}
+		.ui-jqgrid .ui-jqgrid-resize {
+			height: 50px !important;
+			position: relative;
+			cursor: e-resize;
+			display: inline;
+			overflow: hidden;
+		}
+		.ui-jqgrid tr.jqgrow {
+			outline-style: none;
+			height: 40px;
+		}
+		.ui-jqgrid tr.ui-row-ltr td {
+			text-align: left;
+			border-right-width: 0px;
+			border-right-color: inherit;
+			border-right-style: solid;
+			color: #333333;
+			font-size: 14px;
+			font-weight: 400;
+		}
+		.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+			border: 0px solid #fcd3a1;
+			background: #fbf8ee;
+			color: #444;
+		}
+		.ui-widget-content {
+			border: 1px solid #eee;
+			background: #fff;
+		}
+		.ui-jqgrid tr:nth-child(even) {
+			background: #F5F9FA;
+		}
+		.ui-jqgrid tr:nth-child(odd) {
+			background: #FFFFFF;
+		}
+		.ui-jqgrid .ui-jqgrid-htable .ui-th-div {
+			height: 40px;
+			margin-top: 5px;
+			display: inine-block;
+		}
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+			border: 0px solid #d8dcdf;
+			border-top-width: 1px;
+			border-bottom-width: 1px;
+			border-left-width: 1px;
+			border-top-style: solid;
+			border-bottom-style: solid;
+			border-left-style: solid;
+			border-top-color: rgb(216, 220, 223);
+			border-bottom-color: rgb(216, 220, 223);
+			border-left-color: rgb(216, 220, 223);
+			background: #FFFFFF;
+			font-weight: normal;
+			color: #555;
+		}
+		.jumbotron{
+			padding: 0%;background: #FFFFFF;line-height: 1;
+		}
+		.container{
+
+		}
+		.container .jumbotron {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		body{ font: 62.5%/1.4 Arial Sans-serif; ... }
+		.wrapper{ min-width:600px; width:98%; margin: 0 auto; }
+		.wrapper .content{ min-width:400px; width:70%; ... }
+		.wrapper .sidebar{ min-width:180px; width:28%; ... }
+		.wrapper h1{ font-size:2em; }
+		.wrapper p{ padding: 0 0 1em; }
+		.iotx-name{
+			font-size: 15px;
+		}
+		.iotx-time {
+			width: 26%;
+			height: 80%;
+			float: right;
+			margin-top: 2%;
+		}
+		.warnings-img {
+			padding-top: 0%;
+		}.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+			 padding: 7.5px;
+			 line-height: 1;
+			 vertical-align: middle;
+			 border: 1px solid #DDDDDD;
+			 font-size: 12px;
+		 }
+		.aaa{
+			text-align: center;width: 21%;
+			color: #999999;
+		}
+		.bbb{
+			padding-left: 30px;
+			color: #333333;
+		}
+
+		.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+			border: 1px solid #E1E3E8;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-top-color: rgb(221, 221, 221);
+		}
+		.tab-img:after {
+			content: "";
+			width: 2px;
+			height: 40px;
+			margin-top: 5px;
+			background-color: #eeeeee;
+			position: absolute;
+			left: 50px;
+		}
+	</style>
+
+	<script type="text/javascript" src="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jqgrid/js/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jqgrid/src/i18n/grid.locale-cn.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/pageJquery/js/zxf_page.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/page/createPage.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/device/detail.js"></script>
+	<!--<script type="text/javascript" src="/webResources/js/custom/device/repairRecord.js"></script>-->
+	<script type="text/javascript" src="/webResources/js/custom/device/deviceAlarm.js"></script>
+	<script type="text/javascript" src="/webResources/js/custom/device/materiel.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-BlockUI/jquery.blockUI.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/carousel/carousel.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/device/technicalParameter.js"></script>
+
+</head>
+
+<body>
+	<div layout:fragment="content" >
+		<input type="hidden" th:value="${deviceId}" id="deviceId" name="deviceId"/>
+		<input type="hidden" th:value="${serialNo}" id="deviceSN" name="deviceSN"/>
+		<input type="hidden" th:value="${iotxListJsonStr}" id="iotxListJsonStr" name="iotxListJsonStr"/>
+		<div class="table-top">
+			<div class="title-big" th:text="#{detail}">
+				设备详情
+			</div>
+			<div class="title-small">
+				>
+			</div>
+			<a href="javascript:void(0)" onclick="javascript:history.go(-1);return false;" >
+				<button class="back" th:text="#{return}"></button>
+			</a>
+		</div>
+		<div class="container" style="padding-top: 1%;padding-left: 3%;padding-right: 3%;min-height: 847px">
+			<div class="jumbotron col-lg-12" style="background: #F4F6F9;height: 350px">
+				<div class="col-lg-12 device-top-tec" id="device_operate">
+					<!--<a href="'/dailyMaintenance/management/view">-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab rcwh" style="margin-left: 0px">
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">日常维护</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/021.png') center center no-repeat">
+						</div>
+					</div>
+					<!--</a>-->
+					<!--<a href="/instrument/management/view">-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab ybjc" >
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">仪表检测</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/022.png') center center no-repeat">
+						</div>
+					</div>
+					<!--</a>-->
+					<!--<a href="/inspectionRecord/management/view">-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab xjjl" >
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">巡检记录</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/023.png') center center no-repeat">
+						</div>
+					</div>
+					<!--</a>-->
+					<!--<a href="/sparePart/management/view">-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab bpbj" >
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">备品备件</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/024.png') center center no-repeat">
+						</div>
+					</div>
+					<!--</a>-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab gjqs" >
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">告警记录</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/025.png') center center no-repeat">
+						</div>
+					</div>
+					<!--<a th:href="'/materiel/management/'+${deviceId}+'/view'">-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab ycxwh" style="width: 15%" >
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">预测性维护</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/026.png') center center no-repeat">
+						</div>
+					</div>
+					<!--</a>-->
+					<div class="col-lg-2 col-md-4 col-sm-6 detail-tab wxjl" >
+						<label style="font-weight: 500;line-height: 47.5px;margin-left: 10%">工单记录</label>
+						<div class="tab-img hidden-md hidden-sm" style="background: url('/webResources/img/deviceDetail/021.png') center center no-repeat">
+						</div>
+					</div>
+
+					<!--<div id="topo-img"  th:style="'background:url(' + @{'/fileDownload/'+${topology==null?'':topology.stringObjectId}} + ');background-size:100% 100%'">
+					</div>
+					<div id="topo-right">
+						<div id="topo-button">
+							<a th:href="'/device/parameters/'+${serialNo}+'/view'+'?deviceId='+${deviceId}"><button id="topobutton-one">全部参数</button></a>
+							<button id="topobutton-two" v-on:click="selectParameters">配置参数</button>
+						</div>
+						<div class="topo-data" v-for="parameter in showParameters">
+							<div class="topo-data-up">
+								{{parameter.name}}
+							</div>
+							<div class="topo-data-down">
+								&lt;!&ndash;{{parameter.pointAddress}}&ndash;&gt;
+								{{parameter.lastVal}}
+							</div>
+						</div>
+					</div>-->
+					<div id="allParameters">
+
+					</div>
+				</div>
+				<div id="detail" class="col-lg-12 device-top-img">
+					<div  style="width:50%;height: 80%;float:left;">
+						<div id="img-top-left">
+							<div class="carousel-content">
+								<ul class="carousel">
+									<li th:each="fileMetaData : ${fileMetaDatas}"><img th:src="'/fileDownload/'+${fileMetaData.stringObjectId}"/></li>
+								</ul>
+								<ul class="img-index"></ul>
+								<div class="carousel-prev"><img src="/webResources/img/carousel/left_btn1.png"/></div>
+								<div class="carousel-next"><img src="/webResources/img/carousel/right_btn1.png"/></div>
+							</div>
+							<!--style="background-image: url('./img/goaland/device/device-topo-small.png')"-->
+						</div>
+
+						<div style="width: 26.7%;height: 100%;float: left">
+							<div class="up-down">
+								<div class="up-down-img" style="background-position:50%;background-repeat:no-repeat;background-image: url('/webResources/img/deviceDetail/020.png')">
+								</div>
+								<a href="#" v-on:click="uploadTechnologyFile">
+									<div class="up-down-zi" >
+										上传文档
+									</div>
+								</a>
+							</div>
+							<div class="up-down">
+								<div class="up-down-img" style="background-position:50%;background-repeat:no-repeat;background-image: url('/webResources/img/deviceDetail/019.png')">
+								</div>
+								<a th:href="'/device/technologyDocument/manage/'+${deviceId}+'/view'">
+									<div class="up-down-zi">
+										技术文档
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div  style="width:50%;height: 80%;float:left;padding-left:1%;">
+						<table class="table" style="height: 100%;padding-left: 1%;">
+
+							<tbody>
+							<tr>
+								<td class="aaa" th:text="#{customerService.projectName}">企业名称：</td>
+								<td class="bbb">{{detailData['project.name']}}</td>
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{customerService.projectNo}">企业编号：</td>
+								<td class="bbb">{{detailData['project.number']}}</td>
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{customerService.projectLocation}">联系地址：</td>
+								<td class="bbb">{{detailData['project.location']}}</td>
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{customerService.productName}">产品名称：</td>
+								<td class="bbb">{{detailData.productName}}</td>
+
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{customerService.productSpecifications}">产品规格：</td>
+								<td class="bbb">{{detailData.productSpecifications}}</td>
+
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{customerService.productNo}">产品编号：</td>
+								<td class="bbb">{{detailData.productNo}}</td>
+
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{device.commissioningTime}">投运时间：</td>
+								<td class="bbb">{{detailData.commissioningTime}}</td>
+							</tr>
+							<tr>
+								<td class="aaa" th:text="#{device.serialNo}">设备序列号：</td>
+								<td class="bbb">{{detailData.serialNo}}</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+			<!--<div class="jumbotron col-lg-12" style="margin-top: 3%;">-->
+				<!--<div class="title-div" th:text="#{device.repair.record}">-->
+					<!--维修记录-->
+				<!--</div>-->
+				<!--<div class="col-lg-12" style="padding-left: 0%;padding-right: 0%;">-->
+					<!--<table id="recordTable"></table>-->
+					<!--<div id="recordPager"></div>-->
+				<!--</div>-->
+			<!--</div>-->
+
+			<div class="select" style="height: 20px;display: inline-block;width:100%;margin-top: 4%">
+				<!-- <div class="" style="float:left;display: inline-block;padding: 5px 10px;margin-left: 15px;">
+                     <select  id="devCategory" name="devCategory" class="form-control" style="width:200px;">
+                         <option th:each="devCategory : ${devCategorys}" th:value="${devCategory.id}" th:text="#{'device.'+${devCategory.categoryType}}"></option>
+                     </select>
+                 </div>
+                 <div class="" style="float:left;display: inline-block;height: 35px;padding-top: 10px;">
+                     <select name="device" id="device" class="form-control"  style="width: 300px!important;margin-left:1%;display: table-row;margin-top:-5px; ">
+
+                     </select>
+                 </div>-->
+				<div class="" style="float:left;display: inline-block;padding: 10px 5px;">
+					<select name="iotxList" id="iotxList" class="form-control"  style="width: 250px!important;margin-left:1%;display: table-row;margin-top:-5px; ">
+
+					</select>
+				</div>
+				<button type="primary" class="company-button-import" id="confirm" style="background:#0688EC;padding: 0px; width:60px;height: 35px;font-size:14px;margin-top: 5px !important;" th:text="#{confirm}">确认</button>
+			</div>
+			<div class="companyMgr-page">
+				<div class="jumbotron col-lg-12" style="margin-top: 1%;">
+					<div class="title-div" th:text="#{device.technicalParameter}">
+						技术参数
+					</div>
+					<div class="device-div-in">
+						<div class="data-table">
+							<table id="parameterTable"></table>
+							<div id="parameterPager"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+
+</html>
+

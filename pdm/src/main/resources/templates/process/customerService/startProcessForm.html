@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="base">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{customerService.startProcess}"></title>
+
+	<link href="/webResources/plugins/fileinput/css/fileinput.css" rel="stylesheet"/>
+	<link href="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+	<link href="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet"/>
+	<link href="/webResources/css/custom/validate.css" rel="stylesheet"/>
+	<link href="/webResources/plugins/jquery-lighter/stylesheets/jquery.lighter.css" rel="stylesheet"/>
+	<link href="/webResources/plugins/hotbox/hotbox.css" rel="stylesheet"/>
+
+	<style type="text/css">
+		.form-control[readonly]{
+		    cursor: default;
+		    background-color: #c7c7c7;
+		}
+		.col-lg-12{
+        padding:0px;
+	    }
+		.formone{
+		    margin-top: 15px;
+		    padding-left: 0px;
+		}
+	</style>
+
+
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-validate/dist/jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-validate/dist/localization/messages_zh.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/process/customerService/startProcessForm.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-UI/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-form/jquery.form.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-BlockUI/jquery.blockUI.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/fileinput/js/fileinput.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/fileinput/js/locales/zh.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-lighter/javascripts/jquery.lighter.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/hotbox/bower_components/seajs/dist/sea.js" ></script>
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div id="hotbox"></div>
+		<form class="form-horizontal" role="form" th:object="${process}" id="customerServiceForm" v-cloak="v-cloak">
+			<input type="hidden" id="processId" name="processId" th:value="${process.id}"/>
+			<input type="hidden" id="processName" name="processName" th:value="${process.name}"/>
+			<input type="hidden" id="reject" name="reject" th:value="${process.examineDetail.reject}"/>
+	        <fieldset>
+				<div class="table-top">
+			        <div class="title-big" th:text="#{customServiceProcess}">
+			            	售后流程
+			        </div>
+			        <div class="title-small" th:text="#{customerService.startProcess}">
+			            >发起流程
+			        </div>
+			    </div>
+			    <div class="container" style="padding-top:20px;padding-left: 3%;padding-right: 3%;min-height:847px;padding-bottom: 20px">
+			        <div class="col-lg-12" style="height: 50px;padding:0px;background: #F2F7F9;border: solid #C6D1D9 1px;">
+			            <div class="apply-detail-img">
+			            </div>
+			            <label style="margin-top: 15px;margin-left: 15px" th:text="#{customerService.applicant}">发起人:</label>
+			            &nbsp;&nbsp;&nbsp;
+			            <label style="margin-top: 15px;margin-left: 15px" th:text="${session.user.name}">admin</label>
+			        </div>
+			        <div class="col-lg-12" style="background: #FFFFFF;padding-bottom: 30px">
+			        <div class="col-lg-12">
+			        <div class="project-info-title1" style="">
+			            <label style="margin-top: 5px;margin-left: 15px" th:text="#{project.message}">项目信息</label>
+			        </div>
+			        </div>
+			            <div class="col-lg-12" style="padding-left:1%;padding-right:1%;margin-left: 12%;width: 77%;border-top: solid #d9dee2 1px;margin-top: 20px">
+			                <div class="form-group">
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.belong}">归属</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+				                    <div class="select">
+			                        	<select th:field="*{startDetail.belong}" name="startDetail.belong" id="startDetail.belong" class="form-control">
+							            	<option th:each="belong : ${belongs}" th:value="${belong}" th:text="#{'customerService.belong.'+${belong}}"></option>
+							            </select>
+				                    </div>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                	<input type="hidden" th:field="*{startDetail.project.id}"/>
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.projectNo}">企业编号</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+			                        <input type="text" class="form-control" th:field="*{startDetail.project.number}" th:placeholder="#{customerService.projectNo}"/>
+			                    </div>
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.projectName}">企业名称</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+			                        <input type="text" class="form-control" th:field="*{startDetail.project.name}" th:placeholder="#{customerService.projectName}" disabled="true"/>
+			                    </div>
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.projectLocation}">企业地址</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+			                        <input type="text" class="form-control" th:field="*{startDetail.project.location}" th:placeholder="#{customerService.projectLocation}" disabled="true"/>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.productName}">产品名称</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+			                        <input type="text" class="form-control" th:field="*{startDetail.productName}" th:placeholder="#{customerService.productName}"/>
+			                    </div>
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.productNo}">产品编号</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+			                        <input type="text" class="form-control" th:field="*{startDetail.productNo}" th:placeholder="#{customerService.productNo}"/>
+			                    </div>
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                        <label style="margin-top: 5px" th:text="#{customerService.productSpecifications}">产品规格</label>
+			                    </div>
+			                    <div class="col-lg-3 formone" style="height: 40px">
+			                        <input type="text" class="form-control" th:field="*{startDetail.productSpecifications}" th:placeholder="#{customerService.productSpecifications}"/>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <div class="col-lg-1 formone" style="height: 40px">
+			                    <label style="margin-top: 5px" th:text="#{customerService.productType}">产品型号：</label>
+			                    </div>
+			                    <div class="col-md-8 formone" style="height:40px;padding-left: 0%;padding-top: 3px">
+			                    	<label th:each="categoryType : ${categoryTypes}" class="checkbox-inline"><input th:field="*{startDetail.categoryType}" name="startDetail.categoryType" class="uniform" th:value="${categoryType.id}" th:text="${categoryType.name}" type="radio"/></label>
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="col-lg-12">
+			                <div class="project-info-title1" style="">
+			                    <label style="margin-top: 5px;margin-left: 15px" th:text="#{customerService.contactWay}">联系方式</label>
+			                </div>
+			            </div>
+			            <div class="col-lg-12" style="padding-left:1%;padding-right:1%;margin-left: 12%;width: 77%;border-top: solid #d9dee2 1px;margin-top: 20px">
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{customerService.customerMan}">客户联系人</label>
+			                        </div>
+			                        <div class="col-lg-3 formone" style="height: 40px">
+			                            <input type="text" class="form-control" th:field="*{startDetail.customerMan}" th:placeholder="#{customerService.customerMan}"/>
+			                        </div>
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{customerService.customerNumber}">联系电话</label>
+			                        </div>
+			                        <div class="col-lg-3 formone" style="height: 40px">
+			                            <input type="text" class="form-control" th:field="*{startDetail.customerNumber}" th:placeholder="#{customerService.customerNumber}"/>
+			                        </div>
+			                    </div>
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{customerService.projectMan}">项目联系人</label>
+			                        </div>
+			                        <div class="col-lg-3 formone" style="height: 40px">
+			                            <input class="form-control" th:value="${process.startDetail.projectMan!=null?process.startDetail.projectMan:session.user.name}" type="text" id="startDetail.projectMan" name="startDetail.projectMan" th:placeholder="#{customerService.projectMan}"/>
+			                        </div>
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{customerService.projectNumber}">联系电话</label>
+			                        </div>
+			                        <div class="col-lg-3 formone" style="height: 40px">
+			                            <input class="form-control" th:value="${process.startDetail.projectNumber!=null?process.startDetail.projectNumber:session.user.tel}" type="text" id="startDetail.projectNumber" name="startDetail.projectNumber" th:placeholder="#{customerService.projectNumber}"/>
+			                        </div>
+			                    </div>
+			            </div>
+			            <div class="col-lg-12">
+			                <div class="project-info-title1" style="">
+			                    <label style="margin-top: 5px;margin-left: 15px" th:text="#{customerService.otherDemands}">其他要求</label>
+			                </div>
+			            </div>
+			            <div class="col-lg-12" style="padding-left:1%;padding-right:1%;margin-left: 12%;width: 77%;border-top: solid #d9dee2 1px;margin-top: 20px">
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{nextAssignee}">下一步办理人</label>
+			                        </div>
+			                        <div class="col-lg-3 formone" style="height: 40px">
+			                            <div class="select">
+			                                <select th:field="*{startDetail.nextAssignee}" name="startDetail.nextAssignee" id="startDetail.nextAssignee" class="form-control">
+								            	<option th:each="account : ${accounts}" th:value="${account.id}" th:text="${account.name}"></option>
+								            </select>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{customerService.estimatedTime}">预估维修时间</label>
+			                        </div>
+			                        <div class="col-lg-3 formone" style="height: 40px">
+			                            <input type="text" class="form-control" th:field="*{startDetail.estimatedTime}" th:placeholder="#{customerService.estimatedTime}"/>
+			                        </div>
+			                    </div>
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone" style="height: 40px">
+			                            <label style="margin-top: 5px" th:text="#{customerService.baseDemands}">基本要求</label>
+			                        </div>
+			                        <div class="col-lg-11 formone">
+			                            <textarea th:field="*{startDetail.baseDemands}" th:placeholder="#{customerService.baseDemands}" rows="6" cols="5" name="textarea" class="autosize form-control textarea-transition" style="width:60%;overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 91px;"></textarea>
+			                        </div>
+
+			                    </div>
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone">
+			                            <label style="margin-top: 5px" th:text="#{customerService.specialDemands}">特殊要求</label>
+			                        </div>
+			                        <div class="col-lg-11 formone">
+			                            <textarea th:field="*{startDetail.specialDemands}" th:placeholder="#{customerService.specialDemands}" rows="6" cols="5" name="textarea" class="autosize form-control textarea-transition" style="width:60%;overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 91px;"></textarea>
+			                        </div>
+			                    </div>
+			                    <div th:if="${process.examineDetail.reject}" class="form-group">
+			                    	<div class="col-lg-1 formone">
+			                            <label style="margin-top: 5px" th:text="#{customerService.uploadFile.exist}">上传文件</label>
+			                        </div>
+			                        <div id="existFiles" class="other-img">
+			                           	<table>
+					                  		<tr>
+					                  			<td v-for="fileData in fileDatas">
+					                  				<a v-bind:href="'/fileDownload/'+fileData.stringObjectId" data-lighter="data-lighter">
+													  <img v-bind:src="'/fileDownload/'+fileData.stringObjectId" v-bind:id="fileData.stringObjectId" style="width: 80px;height: 80px;"/>
+													</a>
+					                  			</td>
+					                  		</tr>
+					                  	</table>
+			                  		</div>
+			                    </div>
+			                    <div class="form-group">
+			                        <div class="col-lg-1 formone">
+			                            <label style="margin-top: 5px" th:text="#{customerService.uploadFile}">上传文件</label>
+			                        </div>
+			                        <div class="col-lg-11 formone">
+			                            <input type="file" id="fileUpLoad" multiple="multiple" name="fileUpLoad" data-show-caption="true"/>
+			                        </div>
+			                    </div>
+			            </div>
+						<div class="col-lg-12">
+							<a th:href="@{/customerServiceProcess/startedProcess/view}">
+								<input type="button" class="process-out-button" th:value="#{return}"/>
+							</a>
+							<input type="submit" class="process-save-button" th:value="#{commit}"/>
+						</div>
+			        </div>
+			    </div>
+			</fieldset>
+	   	</form>
+	</div>
+</body>
+
+</html>
+

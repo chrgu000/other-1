@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<body>
+	<div th:fragment="menu">
+		<div class="sidebar-menu nav-collapse">
+			<ul>
+				<!-- <li class="active"> -->
+				<li>
+					<a style="padding-top: 20px;" href="/index">
+						<img style="margin-top: -7px;" src="/webResources/img/menu/首页.png"/> <span class="menu-text" style="margin-left:10px;" th:text="#{indexPage}">首页</span>
+					</a>
+				</li>
+				<li class="has-sub"  shiro:hasPermission="systemMgr:view">
+					<a style="padding-top: 20px;" href="#" class="">
+					<img style="margin-top: -7px;" src="/webResources/img/menu/人员管理.png"/> <span class="menu-text" style="margin-left:10px;" th:text="#{systemMgr}">系统管理</span>
+					<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li shiro:hasPermission="employeeMgr:view"><a href="/account/management/view"><span class="sub-menu-text" th:text="#{employeeMgr}">人员管理</span></a></li>
+						<li shiro:hasPermission="roleFunctionGroupMgr:view"><a href="/roleFunctionGroup/management/view"><span class="sub-menu-text" th:text="#{roleFucntionGroupMgr}">权限组管理</span></a></li>
+						<li shiro:hasPermission="roleManage:view"><a href="/roleDepGroupManage/gotoRoleManageList"><span class="sub-menu-text" th:text="#{roleManage}">角色管理</span></a></li>
+						<li shiro:hasPermission="departmentManage:view"><a href="/roleDepGroupManage/gotoDepartmentList"><span class="sub-menu-text" th:text="#{departmentManage}">部门管理</span></a></li>
+						<li shiro:hasPermission="depGroupManage:view"><a href="/roleDepGroupManage/gotoDepGroupList"><span class="sub-menu-text" th:text="#{depGroupManage}">组管理</span></a></li>
+						<li shiro:hasPermission="systemInfoMgr:view"><a href="/systemInfo/management/view"><span class="sub-menu-text" th:text="#{systemInfoMgr}">系统设置</span></a></li>
+					</ul>
+				</li>
+				<li shiro:hasPermission="projectManagement:view">
+					<a style="padding-top: 20px;" href="/project/management/view"><img style="margin-top: -7px;" src="/webResources/img/menu/项目管理.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{project.management}" >项目管理</span>
+					</a>
+				</li>
+				<li shiro:hasPermission="deviceManagement:view" class="has-sub">
+					<a style="padding-top: 20px;" href="#" class="">
+						<img style="margin-top: -7px;" src="/webResources/img/menu/设备管理.png"/> <span class="menu-text" style="margin-left:10px;" th:text="#{deviceManagement}">设备管理</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li shiro:hasPermission="deviceInfo:view"><a href="/device/management/view"><span class="sub-menu-text" th:text="#{deviceInfo}">设备信息</span></a></li>
+						<li shiro:hasPermission="categoryMgr:view"><a href="/category/management/view"><span class="sub-menu-text" th:text="#{categoryMgr}">型号管理</span></a></li>
+						<li shiro:hasPermission="sparePartMgr:view"><a href="/sparePart/management/view"><span class="sub-menu-text" th:text="#{sparePartMgr}">备件管理</span></a></li>
+					</ul>
+				</li>
+				<li class="has-sub" shiro:hasPermission="customServiceProcess:view">
+					<a style="padding-top: 20px;" href="#" class="">
+					<img style="margin-top: -7px;" src="/webResources/img/menu/售后流程.png"/> <span class="menu-text" style="margin-left:10px;" th:text="#{customServiceProcess}">工单流程</span>
+					<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li shiro:hasPermission="customServiceProcessTaskStarted:view"><a th:href="@{/customerServiceProcess/startedProcess/view(menuId=customServiceProcessTaskStarted)}"><span class="sub-menu-text" th:text="#{customServiceProcessTaskStarted}">我发起的工单</span></a></li>
+						<li shiro:hasPermission="customServiceProcessTaskToDo:view"><a th:href="@{/customerServiceProcess/runtimeTask/view(menuId=customServiceProcessTaskToDo)}"><span class="sub-menu-text" th:text="#{customServiceProcessTaskToDo}">我待办的工单</span></a></li>
+						<li shiro:hasPermission="customServiceProcessHistoricTasks:view"><a th:href="@{/customerServiceProcess/historicTasks/view(menuId=customServiceProcessHistoricTasks)}"><span class="sub-menu-text" th:text="#{customServiceProcessHistoricTasks}">我办过的工单</span></a></li>
+						<li shiro:hasPermission="customServiceProcessAllProcesses:view"><a th:href="@{/customerServiceProcess/allProcesses/view(menuId=customServiceProcessAllProcesses)}"><span class="sub-menu-text" th:text="#{customServiceProcessAllProcesses}">工单总览</span></a></li>
+					</ul>
+				</li>
+				<li shiro:hasPermission="documentMgr:view">
+					<a style="padding-top: 20px;" href="/technologyDocument/manage/view"><img style="margin-top: -7px;" src="/webResources/img/menu/资料管理.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{documentMgr}" >资料管理</span>
+					</a>
+				</li>
+				<li shiro:hasPermission="report:view">
+					<a style="padding-top: 20px;" href="/report/management/view"><img style="margin-top: -7px;" src="/webResources/img/menu/数据报表.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{report}" >统计报表</span>
+					</a>
+				</li>
+				<li shiro:hasPermission="oplogMgr:view">
+					<a style="padding-top: 20px;" href="/oplog/management/view"><img style="margin-top: -7px;" src="/webResources/img/menu/微尘.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{oplog}" >操作日志</span>
+					</a>
+				</li>
+				<!--
+				<li shiro:hasPermission="report:view">
+					<a style="padding-top: 20px;" href="/advertisement/management/view"><img style="margin-top: -7px;" src="/webResources/img/menu/advertisement.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{advertisement.management}" >广告管理</span>
+					</a>
+				</li>
+				<li shiro:hasPermission="iotxManagement:view">
+					<a style="padding-top: 20px;" href="/iotx/management/view"><img style="margin-top: -7px;" src="/webResources/img/menu/iotx.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{iotxMgr}" >iotx管理</span>
+					</a>
+				</li>
+				<li shiro:hasPermission="sensorManagement:view">
+					<a style="padding-top: 20px;" href="/sensor/management/view"><img style="margin-top: -7px;" src="/webResources/img/menu/传感器.png"/>
+						<span class="menu-text" style="margin-left:10px;" th:text="#{sensorMgr}" >传感器管理</span>
+					</a>
+				</li> -->
+				<li class="has-sub" shiro:hasPermission="integral:view">
+					<a style="padding-top: 20px;" href="#" class="">
+						<img style="margin-top: -7px;" src="/webResources/img/menu/积分管理.png"/> <span class="menu-text" style="margin-left:10px;" th:text="#{integral}">积分</span>
+						<span class="arrow"></span>
+					</a>
+					<ul class="sub">
+						<li shiro:hasPermission="myIntegral:view"><a href="/integral/myIntegral/view"><span class="sub-menu-text" th:text="#{myIntegral}">我的积分</span></a></li>
+						<li shiro:hasPermission="integralMgr:view"><a href="/integral/integralMgr/view"><span class="sub-menu-text" th:text="#{integralMgr}">积分管理</span></a></li>
+						<li shiro:hasPermission="integralRule:view"><a href="/integralRule/management/view"><span class="sub-menu-text" th:text="#{integralRule}">积分规则</span></a></li>
+					</ul>
+				</li>
+			</ul>
+			<!-- /SIDEBAR MENU -->
+		</div>
+	</div>
+</body>
+
+</html>

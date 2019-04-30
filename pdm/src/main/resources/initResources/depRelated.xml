@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departments>
+	<department code="networkDep" name="网络部">
+		<depGroup code="networkManageGroup" name="网络管理组">
+			<role code="admin" name="管理员"></role>
+		</depGroup>
+	</department>
+	<department code="engineerDep" name="工程部">
+		<depGroup code="engineerManageGroup" name="工程管理组">
+			<role code="engineerManager" name="工程部经理"></role>
+		</depGroup>
+		<depGroup code="customerServiceGroup" name="售后服务组">
+			<role code="customerServicer" name="服务人员"></role>
+		</depGroup>
+		<depGroup code="engineerGroup" name="工程师组">
+			<role code="engineer" name="工程师"></role>
+		</depGroup>
+		<depGroup code="engineerClerkGroup" name="文员组">
+			<role code="engineerClerk" name="工程部文员"></role>
+		</depGroup>
+	</department>
+	<department code="salesDep" name="销售部">
+		<depGroup code="salesManageGroup" name="销售管理组">
+			<role code="salesManager" name="销售部经理"></role>
+		</depGroup>
+		<depGroup code="salesClerkGroup" name="文员组">
+			<role code="salesClerk" name="销售部文员"></role>
+		</depGroup>
+	</department>
+	<department code="qualityCheckingDep" name="质检部">
+		<depGroup code="qualityCheckingManageGroup" name="质检管理组">
+			<role code="qualityCheckingManager" name="质检部经理"></role>
+		</depGroup>
+		<depGroup code="qualityCheckingClerkGroup" name="文员组">
+			<role code="qualityCheckingClerk" name="质检部文员"></role>
+		</depGroup>
+	</department>
+	<department code="customServiceDep" name="客服部">
+		<depGroup code="customServicClerkGroup" name="文员组">
+			<role code="customServicClerk" name="客服部文员"></role>
+		</depGroup>
+	</department>
+	<department code="clientDep" name="客户">
+		<depGroup code="clientGroup" name="客户组">
+			<role code="client" name="客户"></role>
+		</depGroup>
+	</department>
+</departments>

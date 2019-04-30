@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="base">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{indexPage}">首页</title>
+
+	<style type="text/css">
+	#allMap {
+		width: 100%;
+		height: 700px;
+		overflow: hidden;
+		margin: 0;
+		font-family: "微软雅黑";
+	}
+	.anchorBL{
+        display:none;
+    }
+	.category-goaland {
+		cursor: pointer;
+	}
+	</style>
+
+	<script type="text/javascript" th:src="@{http://api.map.baidu.com/getscript(v=2.0,ak=5CszUV7dPeeTfhUi2OR8hXncqKYz2WqW,t=20170608143204)}"></script>
+	<script type="text/javascript" src="/webResources/plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="/webResources/plugins/bMap/bmap.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/dashboard/dashboard.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/dashboard/map.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/dashboard/distribute.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/dashboard/chart.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/dashboard/right-line.js" ></script>
+
+</head>
+
+<body>
+	<div layout:fragment="content" >
+		<div class="dashboard">
+		    <div class="dashboardin">
+		        <div id="devices" class="dhtop" v-cloak="v-cloak">
+		            <div v-for="(item,index) in deviceDatas" class="category-goaland" :style="getStyle(index)" style="margin-right: 1%;padding-bottom:0.75%;" v-on:click="viewDevice(item.name)">
+		                <div class="category-number">
+		                    {{item.count}}
+		                </div>
+		                <div class="eng-name">
+		                    {{item.code}}
+		                </div>
+		                <div class="cha-name">
+		                 	{{item.name}}
+		                </div>
+		            </div>
+		        </div>
+		        <div class="dhcenter">
+		            <div class="allmap" id="allmap">
+		            </div>
+		            <div class="dhright">
+		                <div class="dhright-title" th:text="#{device.distribute}">
+		                </div>
+		                <div class="right-charts" id="right-pie">
+		                </div>
+		            </div>
+		            <div class="dhright">
+		                <div class="dhright-title" th:text="#{alarm.data}">
+		                </div>
+		                <div class="right-charts" id="right-bar">
+		                </div>
+		            </div>
+		            <div class="dhright">
+		                <div class="dhright-title" th:text="#{process.start.count.daily}">
+		                </div>
+		                <div class="right-charts" id="right-line">
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</body>
+
+</html>

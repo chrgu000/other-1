@@ -1,0 +1,9 @@
+package com.anosi.asset.dao.jpa;
+
+import com.anosi.asset.model.jpa.DevCategory;
+
+public interface DevCategoryDao extends BaseJPADao<DevCategory> {
+
+	DevCategory findByCategoryType_CodeEquals(String categoryType);
+
+}

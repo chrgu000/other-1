@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="process/customerService/customerProcessTop">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="#{customerService.startedProcess}">售后流程-我发起的任务</title>
+
+	<link href="/webResources/css/custom/process.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="/webResources/plugins/pageJquery/css/zxf_page.css"/>
+	<link href="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+
+	<style type="text/css">
+		.doingbutton {
+		    width: 45%;
+		}
+	</style>
+
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/bootstrap-datetimepicker.min.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/process/customerService/startedProcess.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/pageJquery/js/zxf_page.js" ></script>
+	<script type="text/javascript" src="/webResources/plugins/jquery-BlockUI/jquery.blockUI.js" ></script>
+	<script type="text/javascript" src="/webResources/js/custom/page/createPageDefault.js" ></script>
+
+</head>
+
+<body>
+	<div layout:fragment="company-select" >
+        <div class="company-select-title" th:text="#{customerService.select}">
+           	 筛选：
+        </div>
+        <div class="time-select1" th:text="#{customerService.time}">
+           	 时间范围
+        </div>
+        <div class="time-select">
+            <input class="form-control" type="text" id="beginTime" size="10" th:placeholder="#{customerService.beginTime}" value=""/>
+        </div>
+        <div class="time-select2">
+            to
+        </div>
+        <div class="time-select">
+            <input class="form-control" type="text" id="endTime" size="10" th:placeholder="#{customerService.endTime}" value=""/>
+        </div>
+
+        <div class="company-button" style="margin-right: 6%;">
+         	<a href="/customerServiceProcess/startProcess/form/view">
+            	<button class="company-button-new" style="height: 100%;margin-top: 0%" th:text="#{add}">
+          		 	新增
+            	</button>
+            </a>
+        </div>
+        <div class="company-search" style="float: right;margin-top: -1%;margin-right: 5%">
+           <div class="input-group input-medium">
+               <input class="form-control" v-model="searchContent" th:placeholder="#{searchContent}" type="text"/>
+               <span class="input-group-btn">
+                   <button type="button" id="search" class="btn btn-success" style="background: #F2F6FC;border: solid 1px #CCCCCC;"><img src="/webResources/img/icon/search.png"/></button>
+               </span>
+           </div>
+        </div>
+   </div>
+   <div layout:fragment="processContent">
+        <div class="table-in">
+            <div class="table-title">
+                <div class="title-first" th:text="#{customerService.information}">
+                    	工单信息
+                </div>
+                <div class="title-second" th:text="#{customerService.agreement.status}">
+                    	合同状态
+                </div>
+                <div class="title-third" th:text="#{customerService.status}">
+                    	工单状态
+                </div>
+                <div class="title-fourth" th:text="#{operate}">
+                    	操作
+                </div>
+            </div>
+            <div class="processList">
+                <div class="process-in" v-for="processData in processDatas">
+                    <div class="process-in-title">
+                        <div class="process-in-title-left">
+                            	<span th:text="#{customerService.name}">工单编号</span>
+                            	<span>:{{processData.name}}</span>
+                        </div>
+                        <div class="process-in-title-right">
+                        		<span th:text="#{customerService.applicant}">发起人</span>
+                            	<span>:{{processData["applicant.name"]}}</span>
+                            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            	<span th:text="#{customerService.startTime}">发起时间</span>
+                            	<span>:{{processData["historicProcessInstance.startTime"]}}</span>
+                        </div>
+                    </div>
+                    <div class="process-Info-first">
+                        <div class="process-img">
+                           <div style="width: 60px;height: 60px;">
+                               <img src="/webResources/img/icon/order.png"/>
+                           </div>
+
+                        </div>
+                        <div class="process-info-name">
+
+                            <div class="process-info-detail">
+                            	<span th:text="#{customerService.projectNo}">企业编号</span>
+                            	<span>:  {{processData["startDetail.project.number"]}}</span>
+                            </div>
+                            <div class="process-info-center">
+                            	<span th:text="#{customerService.projectName}">企业名称</span>
+                            	<span>:  {{processData["startDetail.project.name"]}}</span>
+                            </div>
+                            <div class="process-info-detail2">
+                            	<span th:text="#{customerService.projectLocation}">企业地址</span>
+                            	<span>:  {{processData["startDetail.project.location"]}}</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="process-border-right" >
+                    </div>
+                    <div class="process-Info-second">
+                        <div v-if="'agreementStatus.agreement' in processData" class="process-apply">
+                            	<img v-bind:src="'/webResources/img/process/'+processData.agreementPic+'.png'"/>
+                            	<span>{{processData["agreementStatus.agreement"]}}</span>
+                        </div>
+                        <div v-else="v-else" class="process-apply" style="margin-top:7%">
+                            	<img src="/webResources/img/process/UNCOMFIRMED.png"/>
+                            	<span th:text="#{customerService.agreement.status.UNCOMFIRMED}"></span>
+                        </div>
+                        <div v-if="'agreementStatus.agreement' in processData" class="process-applyTime">
+                            {{processData["agreementStatus.beginTime"] | dateFormat}} - {{processData["agreementStatus.endTime"] | dateFormat}}
+                        </div>
+                    </div>
+                    <div class="process-border-right" >
+                    </div>
+                    <div class="process-Info-third">
+                        <div class="process-apply" style="color: #F5A623;font-weight: 600">
+                            	{{processData["finishType.name"]}}
+                        </div>
+                        <div v-if="'historicProcessInstance.endTime' in processData" class="process-applyTime" style="padding-left: 20%">
+                            {{processData["historicProcessInstance.startTime"] | dateFormat}} - {{processData["historicProcessInstance.endTime"] | dateFormat}}
+                        </div>
+                        <div v-else="v-else" class="process-applyTime" style="padding-left: 20%">
+                            {{processData["historicProcessInstance.startTime"] | dateFormat}} -
+                        </div>
+                    </div>
+                    <div class="process-border-right" >
+                    </div>
+                    <div class="process-Info-fourth">
+                    	<div v-if="processData['examineDetail.reject']" class="doing-button">
+                            <button v-on:click="rejectRewrit(processData['id'])" class="doingbutton" th:text="#{rejectRewrite}">
+                                	驳回重填
+                            </button>
+                        </div>
+                        <div class="detail-button">
+                            <button v-on:click="detail(processData['id'])" class="detailbutton" th:text="#{customerService.detail}">
+                                	详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="dataPager"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
